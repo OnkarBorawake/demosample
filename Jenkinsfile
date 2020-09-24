@@ -1,22 +1,17 @@
 pipeline{
 	agent any
 	stages {
-		stage ('build') {
+		stage ('Initial') {
 		steps{
-		echo 'This is build stage'
+		echo 'Starting phase'
 		
 		}
 		}
-		stage ('test') {
+		stage ('Build') {
 		steps{
-		echo 'This is test stage'
+		mvn clean package
 		
 		}
 		}
-		stage ('deploy') {
-		steps{
-		echo 'This is deploy stage'
 		
-		}
-		}
-}
+	}}
